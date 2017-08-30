@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			
+			function fn(){
+				console.log(this);
+				this.a  =10;
+				this.b  =100;
+				this.c  =1000;
+				this.d  =10000;
+			}
+
+			let obj = {};
+
+			fn.call(obj)
+
+			console.log(obj);
+
+
+
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

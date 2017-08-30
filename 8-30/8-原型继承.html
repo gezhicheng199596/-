@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+			// 人类 父类 基类
+			function People(name,age,sex){
+				this.name = name;
+				this.age = age;	
+				this.sex = sex;
+			}
+
+			People.prototype.say = function (){
+				console.log('我会说话');	
+			}
+
+
+			function Coder(name,age,sex,money){
+				People.call(this,name,age,sex)
+				this.money = money;
+			}
+
+			// 直接把Coder.prototype改写为 People.prototype;
+			// 因为此时Coder.prototype和 People.prototype用的是同一个对象,所以使用Coder.prototype添加属性的时候，影响了People.prototype，实不可取的
+			Coder.prototype = People.prototype;
+
+			Coder.prototype.coding = function (){
+				console.log("我会敲代码");	
+			}
+
+			let c = new Coder('leo',30,"nan",10000);
+
+			console.log(c);
+
+			console.log(c.say);
+
+			console.log(People.prototype);
+
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

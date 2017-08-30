@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			div {
+				width: 100px;
+				height: 100px;
+				background: red;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+		</style>
+		<script>
+			
+		
+		// 给参数，作为数组的值
+		let arr = new Array(1,2,3,4);
+		let arr2 = new Array('a',"b");
+			console.log();
+
+			// 当在多个原型上的方法，使用同一个属性的时候，通常是把这个属性放在对象上
+
+			// 可拖拽的构造函数
+			function Drag(dragbox){
+				this.abc =10;
+			}
+
+			Drag.prototype.init  = function (){
+				// 开始给可拖拽的元素绑定事件处理
+				console.log(this.abc);
+				
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<div id="box"></div>
+		<script>
+			let d = new Drag(box);
+			d.init();
+
+			/*
+
+	new 调用一个函数做了什么？
+		1. 函数的内部创建隐式的对象  （添加属性的）
+		2. 函数中this=>隐式的对象   (通过this给对象添加属性)
+		3. 执行函数 
+		4. 把隐式的对象返回出去
+				
+
+		1. new Drag 之后 会在Drag函数内部创建一个对象（yinshiObj）
+		2. Drag函数中this => yinshiObj
+		3. 把yinshiObj返回出来了
+		4. 把yinshiObj赋值给了变量d
+		5. d.init()调用，init函数中this => yinshiObj
+			*/
+
+		</script>
+	</body>
+</html>

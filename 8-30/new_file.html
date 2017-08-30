@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			function people(name){
+				this.name=name;
+				
+			}
+			function sp(money){
+				//people.call(this,name,age,sex)
+				this.money = money
+			}
+			
+			class Coder extends people{
+				constructor(name,money){
+					super(name)
+					this.money = money
+				}
+				coding(){
+					console.log('我会编程')
+				}
+			}
+			
+			/*let a = new sp('leo',30,'男',10000)
+			sp.prototype.sping = function(){
+				console.log()
+			}
+			a.sping()
+			console.log(a)*/
+		</script>
+	</body>
+</html>

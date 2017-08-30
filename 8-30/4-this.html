@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+
+			let obj2 = {
+				fn: function (){
+					console.log(this);	
+				}
+			}
+			// 改变函数this但是不直接执行
+			let abc1 = obj2.fn;
+			let abc2 = obj2.fn.bind([1,2,3]);
+
+			console.log(abc1.name);  // fn
+			console.log(abc2.name);  // 'bound fn'
+
+
+
+
+
+
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

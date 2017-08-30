@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+			// 人类 父类 基类
+			function People(name,age,sex){
+				this.name = name;
+				this.age = age;	
+				this.sex = sex;
+			}
+
+			People.prototype.say = function (){
+				console.log('我会说话');	
+			}
+
+
+			function Coder(name,age,sex,money){
+				People.call(this,name,age,sex)
+				this.money = money;
+			}
+
+			// 让Coder.prototype拥有People.prototype上的方法
+			//拷贝继承
+				//把父类原型上的属性拷贝到子级原型上
+			/*for( var attr in People.prototype ){
+				if(People.prototype.hasOwnProperty(attr)){
+					Coder.prototype[attr] = People.prototype[attr];
+				}
+				
+			}*/
+
+			Object.assign(Coder.prototype,People.prototype)
+
+			Coder.prototype.coding = function (){
+				console.log("我会敲代码");	
+			}
+
+			let c = new Coder('leo',30,"nan",10000);
+
+			console.log(c);
+
+			console.log(c.say);
+
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

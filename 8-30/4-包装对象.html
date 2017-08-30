@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			/*
+				包装对象
+					String()
+					Number()
+					Boolean()
+
+				对象都是数据，数据不一定都是对象
+					'miaov'
+					1
+					true
+
+				只有对象才有属性
+			*/
+
+			let str = 'miaov';  // 只是值，不是对象
+
+			// 当掉用slice的时候，内部会把str包装一个对象，调用slice方法
+			str.slice(1);
+
+			// 使用完包装对象之后，立马销毁了
+
+			str.abc  = 10;
+
+			console.log(str.abc);
+
+			let str2 = new String('miaov');
+			console.log(str2.slice);
+			console.log(str2.valueOf());  // 拿到原始值
+			console.log(  );
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

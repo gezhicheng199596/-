@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+			// 人类 父类 基类
+			function People(name,age,sex){
+				this.name = name;
+				this.age = age;	
+				this.sex = sex;
+			}
+
+			People.prototype.say = function (){
+				console.log('我会说话');	
+			}
+
+			//let p1 = new People('leo',30);
+
+			// 程序员 子类
+			function coder(name,age,sex,money){
+				this.name = name;
+				this.age = age;
+				this.sex = sex;
+				this.money = money;
+			}
+
+			coder.prototype.say = function (){
+				console.log("我会说话");	
+			}
+			coder.prototype.coding = function (){
+				console.log("我会敲代码");	
+			}
+
+			// 设计师 子类
+			function Uier(name,age,sex,beautiful){
+				this.name = name;	
+				this.age = age;	
+				this.sex = sex;
+				this.beautiful = beautiful;
+			}
+
+			Uier.prototype.say = function (){
+				console.log('我会说话');	
+			}
+			Uier.prototype.usePs = function (){
+				console.log('我会使用ps');	
+			}
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

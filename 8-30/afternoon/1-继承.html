@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+			function People(name){
+				this.name = name;
+			}
+			People.prototype.say = function (){
+				console.log("我会说话");	
+			};
+
+			function Coder(name,money){
+				// 继承父类构造函数中属性
+				People.call(this,name);
+				this.money = money;
+			}
+
+			//1. 拷贝继承
+			//Object.assign(Coder.prototype,People.prototype)
+
+			// 中间的一个类
+			function F(){};     
+			F.prototype = People.prototype;  // 把父类的原型给到中间类
+			Coder.prototype = new F;    // 改写子类的原型为中间类生成的对象
+			Coder.prototype.constructor = Coder; // 把子类的constructor指回到子类
+
+			// 2. 寄生式继承
+
+			//Coder.prototype = People.prototype;
+
+			Coder.prototype.coding = function (){
+				console.log("我会编程");	
+			};
+
+			let c = new Coder('leo',10000)
+
+			console.log(People.prototype);
+			console.log(c.say);
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>

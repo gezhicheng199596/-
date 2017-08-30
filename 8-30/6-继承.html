@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title></title>
+		<style>
+			
+		</style>
+		<script>
+			
+			// 人类 父类 基类
+			function People(name,age,sex){
+				this.name = name;
+				this.age = age;	
+				this.sex = sex;
+			}
+
+			People.prototype.say = function (){
+				console.log('我会说话');	
+			}
+
+			// 放程序员这一类拥有People的属性和方法
+
+			/*
+				构造函数（类式继承）
+					call或apply
+			*/
+
+			// 程序员 子类
+			function Coder(name,age,sex,money){
+				// 把people中构造函数中属性，放在Coder的this上
+				// 把People中this指向改变为Coder中的对象
+				People.call(this,name,age,sex)
+				this.money = money;
+			}
+
+			Coder.prototype.coding = function (){
+				console.log("我会敲代码");	
+			}
+
+			let c = new Coder('leo',30,"nan",10000);
+			console.log(c);
+			console.log(c.name);
+
+			console.log(c.say);
+
+
+
+
+
+		</script>
+	</head>
+
+	<body>
+		
+	</body>
+</html>
